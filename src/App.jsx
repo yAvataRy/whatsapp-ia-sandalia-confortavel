@@ -1,21 +1,38 @@
-import './App.css'
-import { Button } from './components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './components/ui/card'
-import { Badge } from './components/ui/badge'
-import { CheckCircle, MessageCircle, Clock, Zap, Users, TrendingUp, Phone, Globe, Bot, Smartphone } from 'lucide-react'
-import iaBrainImage from './assets/images/ia_brain.jpg'
-import iaRobotImage from './assets/images/ia_robot.webp'
-import automationImage from './assets/images/automation.png'
-import whatsappLogo from './assets/images/whatsapp_logo.png'
+import "./App.css";
+import { Button } from "./components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "./components/ui/card";
+import { Badge } from "./components/ui/badge";
+import {
+  CheckCircle,
+  MessageCircle,
+  Clock,
+  Zap,
+  Users,
+  TrendingUp,
+  Phone,
+  Globe,
+  Bot,
+  Smartphone,
+} from "lucide-react";
+import iaBrainImage from "./assets/images/ia_brain.jpg";
+import iaRobotImage from "./assets/images/ia_robot.webp";
+import automationImage from "./assets/images/automation.png";
+import whatsappLogo from "./assets/images/whatsapp_logo.png";
 
 function App() {
   const handleWhatsAppContact = () => {
-    window.open('https://wa.me/5511916720503', '_blank')
-  }
+    window.open("https://wa.me/5511916720503", "_blank");
+  };
 
   const handleWebsiteContact = () => {
-    window.open('https://bravvaglow.com.br', '_blank')
-  }
+    window.open("https://bravvaglow.vercel.app/", "_blank");
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50">
@@ -28,11 +45,16 @@ function App() {
                 <Bot className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-gray-900">Agente IA WhatsApp</h1>
+                <h1 className="text-xl font-bold text-gray-900">
+                  Agente IA WhatsApp
+                </h1>
                 <p className="text-sm text-gray-600">Automação Inteligente</p>
               </div>
             </div>
-            <Button onClick={handleWhatsAppContact} className="bg-green-500 hover:bg-green-600">
+            <Button
+              onClick={handleWhatsAppContact}
+              className="bg-green-500 hover:bg-green-600"
+            >
               <MessageCircle className="w-4 h-4 mr-2" />
               Falar no WhatsApp
             </Button>
@@ -48,24 +70,26 @@ function App() {
               🤖 Projeto Personalizado para Sandália Confortável
             </Badge>
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Agente de Atendimento 
+              Agente de Atendimento
               <span className="text-green-600"> Inteligente</span> via WhatsApp
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Automatize seu atendimento com Inteligência Artificial, aumente suas vendas e melhore a experiência do cliente 24h por dia, 7 dias por semana.
+              Automatize seu atendimento com Inteligência Artificial, aumente
+              suas vendas e melhore a experiência do cliente 24h por dia, 7 dias
+              por semana.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 onClick={handleWhatsAppContact}
                 className="bg-green-500 hover:bg-green-600 text-lg px-8 py-3"
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
                 Solicitar Proposta
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
+              <Button
+                size="lg"
+                variant="outline"
                 onClick={handleWebsiteContact}
                 className="text-lg px-8 py-3"
               >
@@ -85,26 +109,35 @@ function App() {
               Está perdendo vendas por falta de atendimento?
             </h2>
             <p className="text-lg text-gray-600">
-              Muitos negócios perdem oportunidades valiosas quando não conseguem responder rapidamente aos clientes no WhatsApp.
+              Muitos negócios perdem oportunidades valiosas quando não conseguem
+              responder rapidamente aos clientes no WhatsApp.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="text-center">
               <CardHeader>
                 <Clock className="w-12 h-12 text-red-500 mx-auto mb-4" />
-                <CardTitle className="text-red-600">Demora nas Respostas</CardTitle>
+                <CardTitle className="text-red-600">
+                  Demora nas Respostas
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">Clientes desistem quando não recebem resposta rápida</p>
+                <p className="text-gray-600">
+                  Clientes desistem quando não recebem resposta rápida
+                </p>
               </CardContent>
             </Card>
             <Card className="text-center">
               <CardHeader>
                 <Users className="w-12 h-12 text-red-500 mx-auto mb-4" />
-                <CardTitle className="text-red-600">Equipe Sobrecarregada</CardTitle>
+                <CardTitle className="text-red-600">
+                  Equipe Sobrecarregada
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">Funcionários não conseguem atender todos os contatos</p>
+                <p className="text-gray-600">
+                  Funcionários não conseguem atender todos os contatos
+                </p>
               </CardContent>
             </Card>
             <Card className="text-center">
@@ -113,7 +146,9 @@ function App() {
                 <CardTitle className="text-red-600">Vendas Perdidas</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">Oportunidades de negócio escapam fora do horário comercial</p>
+                <p className="text-gray-600">
+                  Oportunidades de negócio escapam fora do horário comercial
+                </p>
               </CardContent>
             </Card>
           </div>
@@ -129,14 +164,32 @@ function App() {
             </h2>
             <div className="grid md:grid-cols-2 gap-8 mt-12">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-                <img src={iaBrainImage} alt="Inteligência Artificial" className="w-full h-48 object-cover rounded-lg mb-4" />
-                <h3 className="text-xl font-semibold mb-3">Automatização Inteligente</h3>
-                <p>Responder dúvidas frequentes, coletar pedidos e funcionar 24h por dia com IA avançada.</p>
+                <img
+                  src={iaBrainImage}
+                  alt="Inteligência Artificial"
+                  className="w-full h-48 object-cover rounded-lg mb-4"
+                />
+                <h3 className="text-xl font-semibold mb-3">
+                  Automatização Inteligente
+                </h3>
+                <p>
+                  Responder dúvidas frequentes, coletar pedidos e funcionar 24h
+                  por dia com IA avançada.
+                </p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-                <img src={automationImage} alt="Automação" className="w-full h-48 object-cover rounded-lg mb-4" />
-                <h3 className="text-xl font-semibold mb-3">Atendimento Contínuo</h3>
-                <p>Integração com ChatGPT para respostas naturais e redirecionamento inteligente para humanos.</p>
+                <img
+                  src={automationImage}
+                  alt="Automação"
+                  className="w-full h-48 object-cover rounded-lg mb-4"
+                />
+                <h3 className="text-xl font-semibold mb-3">
+                  Atendimento Contínuo
+                </h3>
+                <p>
+                  Integração com ChatGPT para respostas naturais e
+                  redirecionamento inteligente para humanos.
+                </p>
               </div>
             </div>
           </div>
@@ -159,33 +212,36 @@ function App() {
               {
                 icon: <Zap className="w-8 h-8 text-green-500" />,
                 title: "Instalação e Configuração",
-                description: "Plataforma de automação (n8n) totalmente configurada"
+                description:
+                  "Plataforma de automação (n8n) totalmente configurada",
               },
               {
                 icon: <Bot className="w-8 h-8 text-blue-500" />,
                 title: "Integração com IA",
-                description: "GPT integrado para respostas inteligentes e naturais"
+                description:
+                  "GPT integrado para respostas inteligentes e naturais",
               },
               {
                 icon: <Smartphone className="w-8 h-8 text-green-500" />,
                 title: "WhatsApp API",
-                description: "Integração completa com seu número oficial"
+                description: "Integração completa com seu número oficial",
               },
               {
                 icon: <MessageCircle className="w-8 h-8 text-purple-500" />,
                 title: "Fluxos Personalizados",
-                description: "Saudação, FAQ, coleta de pedidos e redirecionamento"
+                description:
+                  "Saudação, FAQ, coleta de pedidos e redirecionamento",
               },
               {
                 icon: <Users className="w-8 h-8 text-orange-500" />,
                 title: "Treinamento Básico",
-                description: "Capacitação para uso e sugestões de melhoria"
+                description: "Capacitação para uso e sugestões de melhoria",
               },
               {
                 icon: <CheckCircle className="w-8 h-8 text-green-500" />,
                 title: "Suporte Inicial",
-                description: "7 dias de acompanhamento com ajustes gratuitos"
-              }
+                description: "7 dias de acompanhamento com ajustes gratuitos",
+              },
             ].map((feature, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
@@ -217,7 +273,9 @@ function App() {
                   <CardTitle>WhatsApp Ativo</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600">Um número de WhatsApp ativo para integração</p>
+                  <p className="text-gray-600">
+                    Um número de WhatsApp ativo para integração
+                  </p>
                 </CardContent>
               </Card>
               <Card className="text-center">
@@ -226,7 +284,10 @@ function App() {
                   <CardTitle>Conta IA</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600">Conta em plataforma de IA (OpenAI) - vou configurar para você</p>
+                  <p className="text-gray-600">
+                    Conta em plataforma de IA (OpenAI) - vou configurar para
+                    você
+                  </p>
                 </CardContent>
               </Card>
               <Card className="text-center">
@@ -235,7 +296,9 @@ function App() {
                   <CardTitle>Plataforma 24h</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600">Plataforma de automação rodando 24 horas</p>
+                  <p className="text-gray-600">
+                    Plataforma de automação rodando 24 horas
+                  </p>
                 </CardContent>
               </Card>
             </div>
@@ -253,10 +316,14 @@ function App() {
             <div className="grid md:grid-cols-2 gap-8">
               <Card className="border-2 border-green-200 relative">
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <Badge className="bg-green-500 text-white">Setup Inicial</Badge>
+                  <Badge className="bg-green-500 text-white">
+                    Setup Inicial
+                  </Badge>
                 </div>
                 <CardHeader className="text-center pt-8">
-                  <CardTitle className="text-2xl">Configuração Completa</CardTitle>
+                  <CardTitle className="text-2xl">
+                    Configuração Completa
+                  </CardTitle>
                   <div className="text-4xl font-bold text-green-600 mt-4">
                     R$ 600,00
                   </div>
@@ -281,8 +348,8 @@ function App() {
                       Treinamento básico
                     </li>
                     <li className="flex items-center">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                      7 dias de suporte gratuito
+                      <CheckCircle className="w-5 h-5 text-green-500 mr-3" />7
+                      dias de suporte gratuito
                     </li>
                   </ul>
                 </CardContent>
@@ -290,7 +357,9 @@ function App() {
 
               <Card className="border-2 border-blue-200 relative">
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <Badge className="bg-blue-500 text-white">Suporte Contínuo</Badge>
+                  <Badge className="bg-blue-500 text-white">
+                    Suporte Contínuo
+                  </Badge>
                 </div>
                 <CardHeader className="text-center pt-8">
                   <CardTitle className="text-2xl">Suporte Mensal</CardTitle>
@@ -395,33 +464,36 @@ function App() {
                 {
                   icon: <Clock className="w-8 h-8 text-green-500" />,
                   title: "Atendimento 24h",
-                  description: "Respostas automáticas e profissionais a qualquer hora do dia"
+                  description:
+                    "Respostas automáticas e profissionais a qualquer hora do dia",
                 },
                 {
                   icon: <MessageCircle className="w-8 h-8 text-blue-500" />,
                   title: "Fora do Horário Comercial",
-                  description: "Atendimento mesmo quando sua equipe não está disponível"
+                  description:
+                    "Atendimento mesmo quando sua equipe não está disponível",
                 },
                 {
                   icon: <TrendingUp className="w-8 h-8 text-purple-500" />,
                   title: "Melhoria da Marca",
-                  description: "Imagem profissional e moderna para seu negócio"
+                  description: "Imagem profissional e moderna para seu negócio",
                 },
                 {
                   icon: <Zap className="w-8 h-8 text-orange-500" />,
                   title: "Redução de Perdas",
-                  description: "Menos vendas perdidas por falta de resposta rápida"
+                  description:
+                    "Menos vendas perdidas por falta de resposta rápida",
                 },
                 {
                   icon: <CheckCircle className="w-8 h-8 text-green-500" />,
                   title: "Maior Conversão",
-                  description: "Aumento da taxa de conversão via WhatsApp"
+                  description: "Aumento da taxa de conversão via WhatsApp",
                 },
                 {
                   icon: <Users className="w-8 h-8 text-blue-500" />,
                   title: "Equipe Otimizada",
-                  description: "Sua equipe foca em atendimentos mais complexos"
-                }
+                  description: "Sua equipe foca em atendimentos mais complexos",
+                },
               ].map((benefit, index) => (
                 <Card key={index} className="hover:shadow-lg transition-shadow">
                   <CardHeader>
@@ -448,20 +520,21 @@ function App() {
               📞 Vamos conversar?
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              Estou à disposição para ajustar essa proposta às suas necessidades e dar início ao projeto o quanto antes.
+              Estou à disposição para ajustar essa proposta às suas necessidades
+              e dar início ao projeto o quanto antes.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 onClick={handleWhatsAppContact}
                 className="bg-white text-green-600 hover:bg-gray-100 text-lg px-8 py-3"
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
                 Falar no WhatsApp
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
+              <Button
+                size="lg"
+                variant="outline"
                 onClick={handleWebsiteContact}
                 className="border-white text-white hover:bg-white hover:text-green-600 text-lg px-8 py-3"
               >
@@ -478,24 +551,30 @@ function App() {
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto text-center">
             <div className="mb-8">
-              <img src={iaRobotImage} alt="IA Robot" className="w-20 h-20 rounded-full mx-auto mb-4 object-cover" />
+              <img
+                src={iaRobotImage}
+                alt="IA Robot"
+                className="w-20 h-20 rounded-full mx-auto mb-4 object-cover"
+              />
               <h3 className="text-2xl font-bold mb-2">Vinícius Lima</h3>
-              <p className="text-gray-400 mb-4">Desenvolvedor Web e Especialista em Automação</p>
+              <p className="text-gray-400 mb-4">
+                Desenvolvedor Web e Especialista em Automação
+              </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
+                <Button
                   onClick={handleWhatsAppContact}
                   className="bg-green-500 hover:bg-green-600"
                 >
                   <Phone className="w-4 h-4 mr-2" />
                   11 9 1672-0503
                 </Button>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   onClick={handleWebsiteContact}
                   className="border-gray-600 text-white hover:bg-gray-800"
                 >
                   <Globe className="w-4 h-4 mr-2" />
-                  bravvaglow.com.br
+                  https://bravvaglow.vercel.app/
                 </Button>
               </div>
             </div>
@@ -508,8 +587,7 @@ function App() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
 
-export default App
-
+export default App;
