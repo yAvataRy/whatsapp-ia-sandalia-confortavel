@@ -1,65 +1,94 @@
-# Makefile para facilitar commits e push para o branch main
+# ========================================
+# 📦 Makefile para facilitar o uso do Git
+# ========================================
 
 # -------------------------
 # COMO INICIAR UM NOVO REPOSITÓRIO GIT
 # -------------------------
-# 1. git init                                  # Inicia o repositório local
-# 2. git remote add origin git@github.com:yAvataRy/whatsapp-ia-sandalia-confortavel.git
-#    - Use a URL SSH (e não HTTPS) para evitar o erro:
-#      "Repository not found" ao fazer push
-#    - Se você já adicionou um origin errado (ex: com HTTPS), corrija com:
-#      git remote set-url origin git@github.com:yAvataRy/whatsapp-ia-sandalia-confortavel.git
+# 1. make init
+# 2. make set-origin           # Usa a URL com alias SSH (github-yavatary)
+# 3. make commit/main msg="mensagem"
 #
-# 3. git branch -M main                        # Garante que o branch principal se chama main
-# 4. git add . && git commit -m "first commit"  # Adiciona arquivos e cria o primeiro commit
-# 5. git push -u origin main                   # Faz push para o GitHub
+# 🧠 Obs: se você usa múltiplas contas no GitHub com chaves diferentes,
+# configure o arquivo ~/.ssh/config e use um Host personalizado (ex: github-yavatary)
+# para garantir que o Git use a chave certa.
 #
-# -------------------------
-# ERROS COMUNS:
-# -------------------------
-# ❌ git push origin main
-# -> remote: Repository not found.
-# -> fatal: repository 'https://github.com/yAvataRy/whatsapp-ia-sandalia-confortavel.git/' not found
-#
-# ✅ Solução:
-# -> Use a URL SSH corretamente com:
-#    git remote set-url origin git@github.com:yAvataRy/whatsapp-ia-sandalia-confortavel.git
-# -> Ou adicione o origin certo:
-#    git remote add origin git@github.com:yAvataRy/whatsapp-ia-sandalia-confortavel.git
-#
-# ✅ Verifique sua URL com:
-#    git remote -v
+# Exemplo de entrada em ~/.ssh/config:
+# 
+#   Host github-yavatary
+#     HostName github.com
+#     User git
+#     IdentityFile ~/.ssh/id_ed25519_yavatary
+#     IdentitiesOnly yes
 
 # -------------------------
-# COMANDO MAKE:
+# COMANDOS DISPONÍVEIS
 # -------------------------
-# Exemplo: make commit/main msg="sua mensagem de commit"
-# Isso irá adicionar, commitar e enviar para o branch main
+# make init                  # Inicia repositório e branch main
+# make set-origin            # Define origin com alias SSH da conta pessoal
+# make origin                # Mostra a URL remota atual
+# make commit/main msg="..."# Adiciona, commita e envia para o branch main
+# make ssh/gen               # Gera uma nova chave SSH
+# make ssh/add               # Adiciona chave ao agente SSH
+# make ssh/show              # Mostra a chave pública para copiar no GitHub
+# make ssh/test              # Testa conexão com GitHub via alias
+# make status                # Verifica status do git
 
-# Cria novo repositório Git
+
+# -------------------------------------
+# INICIALIZAÇÃO E CONFIGURAÇÃO REMOTA
+# -------------------------------------
+
+# Inicia repositório local e branch main
 init:
 	git init
 	git branch -M main
 
-# Define origin com SSH
+# Define origin usando o alias SSH da conta pessoal (github-yavatary)
 set-origin:
-	git remote set-url origin git@github.com:yAvataRy/whatsapp-ia-sandalia-confortavel.git
+	git remote set-url origin git@github-yavatary:yAvataRy/whatsapp-ia-sandalia-confortavel.git
 
-# Mostra URL atual
+# Mostra a URL atual configurada no origin
 origin:
 	git remote -v
 
+# Verifica status atual dos arquivos
+status:
+	git status
 
 
+# -------------------------
+# COMMIT E PUSH
+# -------------------------
+
+# Valida que a variável "msg" está definida
 ifndef msg
-$(error Voce precisa passar a mensagem do commit usando: make commit/main msg="sua mensagem")
+$(error ❌ Voce precisa passar a mensagem do commit usando: make commit/main msg="sua mensagem")
 endif
 
+# Commita e envia para o branch main
 commit/main:
 	git add .
 	git commit -m "$(msg)"
-	git push origin main
+	git push -u origin main
 
 
+# -------------------------
+# CONFIGURAÇÃO DE CHAVE SSH
+# -------------------------
 
-# teste 20h33
+# Gera nova chave SSH (só se você ainda não tem)
+ssh/gen:
+	ssh-keygen -t ed25519 -C "seu-email@exemplo.com"
+
+# Adiciona a chave ao agente SSH
+ssh/add:
+	eval "$$(ssh-agent -s)" && ssh-add ~/.ssh/id_ed25519_yavatary
+
+# Mostra a chave pública para copiar e colar no GitHub
+ssh/show:
+	cat ~/.ssh/id_ed25519_yavatary.pub
+
+# Testa a conexão com GitHub usando o alias personalizado
+ssh/test:
+	ssh -T git@github-yavatary
