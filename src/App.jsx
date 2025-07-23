@@ -414,12 +414,12 @@ function App() {
                   <Smartphone className="w-12 h-12 text-green-500 mx-auto mb-4" />
                   <CardTitle>WhatsApp Business API</CardTitle>
                 </CardHeader>
-                <CardContent className="text-center">
+                {/* <CardContent className="text-center">
                   <div className="text-2xl font-bold text-green-600 mb-2">
                     R$ 20 - R$ 50
                   </div>
                   <p className="text-gray-600">por mês</p>
-                </CardContent>
+                </CardContent> */}
               </Card>
 
               <Card>
@@ -427,25 +427,25 @@ function App() {
                   <Bot className="w-12 h-12 text-blue-500 mx-auto mb-4" />
                   <CardTitle>IA Generativa (GPT-3.5)</CardTitle>
                 </CardHeader>
-                <CardContent className="text-center">
+                {/* <CardContent className="text-center">
                   <div className="text-2xl font-bold text-blue-600 mb-2">
                     R$ 15 - R$ 50
                   </div>
                   <p className="text-gray-600">por mês</p>
-                </CardContent>
+                </CardContent> */}
               </Card>
 
               <Card>
                 <CardHeader className="text-center">
                   <Zap className="w-12 h-12 text-purple-500 mx-auto mb-4" />
-                  <CardTitle>VPS (caso hospede)</CardTitle>
+                  <CardTitle>VPS</CardTitle>
                 </CardHeader>
-                <CardContent className="text-center">
+                {/* <CardContent className="text-center">
                   <div className="text-2xl font-bold text-purple-600 mb-2">
                     R$ 25 - R$ 40
                   </div>
                   <p className="text-gray-600">por mês</p>
-                </CardContent>
+                </CardContent> */}
               </Card>
             </div>
           </div>
