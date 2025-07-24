@@ -67,7 +67,7 @@ function App() {
         <div className="container mx-auto text-center">
           <div className="max-w-4xl mx-auto">
             <Badge className="mb-6 bg-green-100 text-green-800 hover:bg-green-100">
-              🤖 Projeto Personalizado para Sandália Confortável
+              🤖 Projeto Personalizado para *LOJA*
             </Badge>
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
               Agente de Atendimento
